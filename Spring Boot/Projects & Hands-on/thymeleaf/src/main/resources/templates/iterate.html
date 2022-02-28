@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Iterate</title>
+</head>
+<body>
+	<h1 ></h1> <!-- th:each can traverse iterable, map, array, list -->
+	<ul>
+		<li th:each="n, status:${list}"> <!-- way to iterate by thymeleaf -->
+			<!-- status.odd checks index modulo with two and applies the styke to content, don't use n var for these features, n is only for holding data -->
+			<span th:style="${status.odd} ? 'font-weight:bold' : 'font-weight:italic' " th:text="${status.index}+' '+${n}"></span> <!-- status.index tells index of poulated element in list -->
+		</li>
+	</ul>
+</body>
+</html>

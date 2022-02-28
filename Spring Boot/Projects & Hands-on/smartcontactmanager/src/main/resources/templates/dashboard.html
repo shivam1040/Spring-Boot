@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="baseForUser::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Dashboard</title>
+</head>
+<body>
+<section>
+<div th:if="${session.message}" class="container"> <!-- for disaplying success/error message depending on message object recieved in httpsession from controller -->
+		<div th:classappend="${'alert-'+session.message.type}" class="alert" role="alert">
+		<span th:text="${session.message.content}"></span>
+</div>
+<!-- use session code in one place that is baseforuser html in this case else below code won't work -->
+<!-- <th:block th:text="{#session.removeAttribute('message')}"></th:block> removing success/error block so that the same message doesn't appear in every request
+ -->	</div>
+	<h1>name is <span th:text="${user.name}"></span></h1>
+	<input id="payment" type="text" placeholder="Enter donation amount">
+	<button onclick="payment()" id="payButton" type="submit">Donate</button>
+	</section>
+</body>
+</html>

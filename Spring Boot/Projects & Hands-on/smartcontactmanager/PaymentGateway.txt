@@ -1,0 +1,1 @@
+customer sends order details from view to controller or server, then server end uses payment gateway classes/api to create order and created  order gets sent to view/client for payement and the client makes direct payment request to payment gateway. The response is returned which is processed for showing payment status both on server and client end

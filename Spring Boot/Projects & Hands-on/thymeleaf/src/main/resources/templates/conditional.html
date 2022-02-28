@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Conditional</title>
+</head>
+<body>
+	<h1 th:text="${active} ? 'true' : 'false'"></h1> <!-- thymeleaf elvis conditional operator -->	
+	<h1 th:if="${active}==false">IF</h1> <!-- in this conditional, IF is displayed in DOM when active is false -->
+	<h1 th:unless="${active}==false">UNLESS</h1> <!-- in this type of conditonal unless is displayed when active is true -->
+	
+	<div th:switch="${#lists.size(list)}"> <!-- thymeleaf switch implementation -->
+		<h1 th:case="'0'">Zero</h1>
+		<h1 th:case="'4'">Four</h1>
+		<h1 th:case="*">This works as Deafult case</h1>
+	</div>
+</body>
+</html>

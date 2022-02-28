@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Include</title>
+</head>
+<body>
+	<footer id="host" th:replace="footerTempelate::footer(${name})"> <!-- this will search fragement "footer" in footertempelate page in the same directoy and by using replace type including method, it will replcae entire footer block with footer tempelate -->
+		<!-- braces above are used to pass data to footertempelate, which would be reflected here when including is done -->
+	</footer>
+	
+	<footer id="host" th:insert="footerTempelate::footer(${name})"> <!-- insert type of include will copy the entire fragment block inside this block -->
+	
+	</footer>
+	
+	<footer id="host" th:include="footerTempelate::footer(${name})"> <!-- "include" type of include will replace the body inside of this footer block with body inside of fragment footer block -->
+	
+	</footer>
+	
+</body>
+</html>

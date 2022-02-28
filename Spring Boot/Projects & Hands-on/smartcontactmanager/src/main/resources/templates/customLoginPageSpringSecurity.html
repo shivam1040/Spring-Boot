@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Home</title>
+</head>
+<body>
+	<section>
+		Custom Login Page
+		<div class="container">
+      <form class="form-signin" method="post" action="/login">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <p>
+          <label for="username" class="sr-only">Username</label>
+          <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+        </p>
+        <p>
+          <label for="password" class="sr-only">Password</label>
+          <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+        </p>
+        <div class="text-right">
+        	<a href="" class="text-info">Register here</a>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+</div>
+	</section>
+</body>
+</html>

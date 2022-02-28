@@ -1,0 +1,6 @@
+Jason Web Token JWT is encrypted way to transmit data
+
+Authentication is validating 
+Authorization is giving permission after authorization
+
+jwt process- for first request, jwt token(can contin any encrypted data) is generated and stored on server side and send back to client in response. Client store generated jwt in local storage. second request onwards jwt token is sent to server for authentication

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Sign Up</title>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+					<div class="my-card">
+					
+					<div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert"> <!-- checking if recieved session obj from controller has message attribute if yes then append values in class as recieved from message attribute of session obj which has type var in it -->
+					<p th:text="${session.message.content}"></p> <!-- recieving the data recived in session obj from controller -->
+					<th:block th:text="${#session.removeAttribute('message')}"></th:block> <!-- ensuring this alert box is displayed only once in case of success/error -->
+</div>
+					
+						<h1 class="text-center">Sign Up</h1>
+						<form action="" th:action="@{/register}" method="post" th:object="${user}"> <!-- passing the user obj send by view here -->
+		
+							<div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Name</label>
+    <input type="text" name="name" th:classappend="${#fields.hasErrors('name') ? 'is-invalid' : ''}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required="required" th:value="${user.name}"> <!-- this will show value only if name of user obj has any value -->
+     <!-- above block is depicting server side validation -->
+     
+     <div class="invalid-feedback" th:each="e : ${#fields.errors('name')}" th:text="${e}"></div> <!-- block which will display only when error is there for name -->
+     
+     </div>
+     
+     <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email</label>
+    <input type="email" name="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" required="required" th:value="${user.email}">
+     </div>
+     
+     <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Password</label>
+    <input type="password" name="password" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp" required="required">
+     </div>
+     
+      <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">About</label>
+    <input type="text" name="about" class="form-control" id="exampleInputEmail4" aria-describedby="emailHelp" required="required" th:value="${user.about}">
+     </div>
+     
+    <div class="form-group form-check">
+    	<input type="checkbox" name="checkbox" class="form-check-input" id="agreement" required="required">
+    	<label for="agreement">Accept terms & conditions</label>
+    </div>
+    
+     	<button type="submit" class="btn btn-primary">Submit</button>
+     	<button type="reset" class="btn btn-secondary">Reset</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,21 @@
+spring boot is a module of spring from which we speed up the development
+
+it enables us to create stand alone production grade spring based applications that you can just run
+
+boot scans the classpath and automatically find the dependencies like hibernate, mysql connector etc.
+
+spring boot has pom xml in which we add name for starter jars name such as "spring-boot-starter-web" for webapp, these starter jars point to "meta-inf/spring.factories" file which has all the configuration and information related to dependency and the configuration gets activiated predefined(in dependency classes) on demand basis by user
+
+spring boot can be created by ways- by creating a maven project in desired ide and then add starter jar in pom, by using spring intializr website where one can create dummy project according to our specification, by using STS, by CLI
+
+application properties file is used to change  default configuration of spring and add data regarding DB etc.
+
+application.yml file is a substitute for application.properties
+
+Representational state transfer-REST, it's a set of constraints to be used for creating web services/api. Constaints could be client-server architecture, stateless-server can't store any information of client(like if the particular client made a request or not), layered architecture(request can go from any server, application etc.), it's cacheable for quick response
+
+GET, PUT(updates resource), POST(create new resource), DELETE(deletes the resource)
+
+using spring dev tool, it sets cache to false because of which cahnge in source code is visible in browser live. Auto restarts after it detects changes in sourcecode/classpath, live reload just like live server of vs code and many other features
+
+in springboot files are stored in resources/static folder and at runtime the file moves from static to target/static folder

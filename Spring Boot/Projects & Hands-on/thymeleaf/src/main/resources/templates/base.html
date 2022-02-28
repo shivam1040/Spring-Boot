@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)"> <!-- creating a fragment which takes html content as parameter -->
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" th:href="@{/style.css}"/> <!-- thymeleaf way to link to source, searches for source in static folder -->
+</head>
+<body>
+	<h1>Base Header</h1>
+	<div th:replace="${content}"></div> <!-- this entire block will get replaced by recieved html content when another page inherits this page by using replace/insert/include -->
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>About</title>
+</head>
+<body>
+	<h1>About</h1>
+	<h1 th:text="${#strings.toLowerCase(name)}"></h1> <!-- making use of thymeleaf to change case of attribute -->
+	
+	<div th:with="a=5, b=67, n=${name}"> <!-- thymeleaf way to initiallize local variables, scoped to this div -->
+		<h1>Value <span th:text="${a}"></span></h1>
+		<h1 th:text="'sum of' + ${a}+ 'and'"></h1> <!-- thymeleaf concatenation -->
+	</div>
+</body>
+</html>
